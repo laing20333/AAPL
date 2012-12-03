@@ -4,6 +4,7 @@
 
 
 #include "buf.h"
+typedef int FrameId;
 
 // Define buffer manager error messages
 
@@ -35,6 +36,20 @@ BufMgr::BufMgr(int numbuf, Replacer* replacer)
 	// ===========================================================
 
 	// todo: fill the body
+	struct Descriptor{
+	    PageId page_number;
+	    MODE mode;
+	    int pin_count;
+	    bool dirtybit;
+	};
+
+	Page bufPool[numbuf];
+	Descriptor bufDescr[numbuf];
+	
+	
+        pair<PageId,FrameId>*hash_table[HTSIZE];
+
+
 }
 
 // **********************************************************
