@@ -19,7 +19,7 @@ def main():
     Max_Iters = int(config.get('Clustering', 'Max_Iters'))
 
     # read data into dataframe
-    df = pd.read_csv('D:\Thesis\Program\TaipeiCity.csv')
+    df = pd.read_csv(config.get('Config', 'Data_Path'))
 
     # in order to get clustering results in original dataframe
     original_df = df.copy()
